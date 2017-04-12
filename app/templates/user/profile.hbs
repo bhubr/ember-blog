@@ -1,13 +1,13 @@
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('/img/japanese-garden.jpg')">
+<header class="intro-header" style="background-image: url('/img/funky-cow.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="page-heading">
-                    <h1>Sign In</h1>
+                    <h1>Your Profile</h1>
                     <hr class="small">
-                    <span class="subheading">Almost there!</span>
+                    <span class="subheading">Edit your data here!</span>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            {{form-signin}}
+            {{user-profile user=model}}
         </div>
     </div>
 </div>

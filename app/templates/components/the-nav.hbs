@@ -13,12 +13,18 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    {{#if user}}
+                    <li>
+                        {{#link-to 'user.profile' user.username}}{{user.username}}{{/link-to}}
+                    </li>
+                    {{else}}
                     <li>
                         {{#link-to 'auth.signin'}}Sign in{{/link-to}}
                     </li>
                     <li>
                         {{#link-to 'auth.signup'}}Sign up{{/link-to}}
                     </li>
+                    {{/if}}
                     <li>
                         {{#link-to 'single' 'how-to-solve-the-biggest-problems-with-cupcakes'}}Sample Post{{/link-to}}
                     </li>
