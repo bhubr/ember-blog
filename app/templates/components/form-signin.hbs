@@ -1,14 +1,24 @@
-<form class="pure-form pure-form-stacked" {{action "onSubmit" on="submit"}}>
-  <fieldset>
-    <legend>Sign in</legend>
+<form id="signinForm" {{action "onSubmit" on="submit"}}>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label for="email">Email Address</label>
+            {{input id="email" type="email" class="form-control" value=email placeholder="Email Address"}}
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label for="password">Password</label>
+            {{input id="password" type="password" class="form-control" value=password placeholder="password" class="validate"}}
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
 
-    <label for="email">Email</label>
-    {{input id="email" name="email" value=email placeholder="email" class="validate"}}
-    <span class="pure-form-message">This is a required field.</span>
-
-    <label for="password">Password</label>
-    {{input id="password" type="password" name="password" value=password placeholder="password" class="validate"}}
-
-    <button type="submit" class="pure-button pure-button-primary">Sign in</button>
-  </fieldset>
+    <br>
+    <div id="success"></div>
+    <div class="row">
+        <div class="form-group col-xs-12">
+            <button type="submit" class="btn btn-default">Sign in</button>
+        </div>
+    </div>
 </form>

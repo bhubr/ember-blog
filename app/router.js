@@ -11,29 +11,16 @@ Router.map(function() {
     this.route('signin');
     this.route('signup');
   });
-  this.route('ride', function() {
-  	this.route('mine');
-  	this.route('add');
-  });
   this.route('post', function() {
     this.route('new');
     this.route('edit', { path: '/:id' });
   });
   this.route('user', function() {
-    this.route('stuff', { path: '/:id/stuff' });
+    this.route('profile', { path: '/:username/profile' });
   });
-  this.route('tracker', function() {
-    this.route('accounts', function() {
-      this.route('new');
-      this.route('edit', { path: '/:id' });
-    });
-    this.route('sync');
-    this.route('repositories');
-    this.route('projects');
-    this.route('issues');
-    this.route('timers');
-  });
-  this.route('auth.login');
+  this.route('single', { path: '/:slug' });
+  this.route('contact');
+  // this.route('index');
 });
 
 export default Router;

@@ -6,16 +6,16 @@ export default Ember.Route.extend({
   // init() {
   //   this._super(...arguments);
   // },
-  // beforeModel() {
-  //   this.get('session').retrieveSession()
-  // 	.then(user => {
-  //     console.log('user null?', user, user === null);
-  //     if(user===null) {
-  //       this.transitionTo('auth.signin');
-  //     }
-  //   })
-  // 	.catch(err => { this.transitionTo('auth.signin'); });
-  // },
+  beforeModel() {
+    this.get('session').retrieveSession()
+  	.then(user => {
+      console.log('user null?', user, user === null);
+      if(user===null) {
+        this.transitionTo('auth.signin');
+      }
+    })
+  	.catch(err => { this.transitionTo('auth.signin'); });
+  },
   model() {
   	return this.get('session');
   }

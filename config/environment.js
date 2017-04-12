@@ -17,15 +17,16 @@ module.exports = function(environment) {
       }
     },
 
-    // googleFonts: [
-    //   'Roboto:300'
-    // ],
+    googleFonts: [
+      'Open+Sans:300,400,700',
+      'Lora:400'
+    ],
 
-    // // Set or update content security policies
-    // contentSecurityPolicy: {
-    //   'font-src': "'self' fonts.gstatic.com",
-    //   'style-src': "'self' fonts.googleapis.com"
-    // }
+    // Set or update content security policies
+    contentSecurityPolicy: {
+      'font-src': "'self' fonts.gstatic.com",
+      'style-src': "'self' fonts.googleapis.com"
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance

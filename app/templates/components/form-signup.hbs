@@ -1,35 +1,51 @@
-<div class="row">
-  <div class="col s6 offset-s3">
-  	<form {{action "onSubmit" on="submit"}}>
-      <div class="row">
-        <div class="input-field col s6">
-          {{input value=firstName placeholder="First name" id="firstName" type="text" class="validate"}}
-          <label for="firstName">First Name</label>
+<form id="signupForm" {{action "onSubmit" on="submit"}}>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label for="firstName">First Name</label>
+            {{input id="firstName" type="text" class="form-control" value=firstName placeholder="First name"}}
+            <p class="help-block text-danger"></p>
         </div>
-        <div class="input-field col s6">
-          {{input value=lastName placeholder="Last name" id="lastName" type="text" class="validate"}}
-          <label for="lastName">Last Name</label>
+    </div>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label for="lastName">Last Name</label>
+            {{input id="lastName" type="text" class="form-control" value=lastName placeholder="Last name"}}
+            <p class="help-block text-danger"></p>
         </div>
-      </div> 	
-      <div class="row">
-        <div class="input-field col s12">
-          {{input id="email" name="email" value=email placeholder="email" class="validate"}}
-          <label for="email">Email</label>
+    </div>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label for="username">Username</label>
+            {{input id="username" type="text" class="form-control" value=username placeholder="Username"}}
+            <p class="help-block text-danger"></p>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          {{input id="password" type="password" name="password" value=password placeholder="password" class="validate"}}
-          <label for="password">Password</label>
+    </div>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label for="email">Email Address</label>
+            {{input id="email" type="email" class="form-control" value=email placeholder="Email Address"}}
+            <p class="help-block text-danger"></p>
         </div>
-      </div>  	
-      <div class="row">
-        <div class="input-field col s12">
-          {{input id="passwordConfirm" type="password" name="passwordConfirm" value=passwordConfirm placeholder="password confirmation" class="validate"}}
-          <label for="passwordConfirm">Password</label>
+    </div>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label for="password">Password</label>
+            {{input id="password" type="password" class="form-control" value=password placeholder="password" class="validate"}}
+            <p class="help-block text-danger"></p>
         </div>
-      </div>    
-  	<input class="btn" type="submit" value="Go" />
-  	</form>
-  </div>
-</div>
+    </div>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label for="passwordConfirm">Password confirmation</label>
+            {{input id="passwordConfirm" type="password" class="form-control" value=passwordConfirm placeholder="password confirmation" class="validate"}}
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+    <br>
+    <div id="success"></div>
+    <div class="row">
+        <div class="form-group col-xs-12">
+            <button type="submit" class="btn btn-default">Sign up</button>
+        </div>
+    </div>
+</form>
