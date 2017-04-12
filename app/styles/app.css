@@ -1,0 +1,30 @@
+a {
+  text-decoration: none;
+  color: #5ac;
+}
+a:hover {
+  color #6bd;
+}
+.footer {
+  background: #111;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #abc;
+}
+.footer a {
+  color: #abc;
+}
+.l-box {
+  padding: 1em;
+}
+.l-box-lrg {
+  padding: 2em;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.is-center {
+  text-align: center;
+}
+.container {
+  margin-top: 34px;
+}

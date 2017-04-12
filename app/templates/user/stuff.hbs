@@ -1,0 +1,17 @@
+<h2>My stuff</h2>
+
+<ul>
+<li>My name: {{ model.firstName }} {{ model.lastName }} <{{ model.email }}></li>
+</ul>
+
+<h3>My car</h3>
+<ul>
+  <li>Model: {{ model.car.name }} {{ model.car.createdAt }}</li>
+</ul>
+
+
+<h3>My posts</h3>
+{{#each model.posts as |post|}}
+<h4>{{ post.title }}</h4>
+<p>{{ post.content }}</p>
+{{/each}}

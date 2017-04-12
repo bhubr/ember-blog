@@ -1,0 +1,9 @@
+<h3>tags ({{tags.length}})</h3>
+<div>
+{{#each tags as |tag|}}
+<span style={{color-tag tag.name}} {{action 'select' tag on='click'}}>{{tag.name}}</span> 
+{{/each}}
+</div>
+{{#each selected as |tag|}}
+<span>{{tag.name}}</span> 
+{{/each}}

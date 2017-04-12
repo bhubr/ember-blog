@@ -1,0 +1,16 @@
+<h3>users ({{users.length}})</h3>
+<div>
+{{currentUserId}}<br>
+<select onchange={{action (mut currentUserId) value="target.value"}}>
+  <option value=""></option>
+  {{#each users as |userChoice|}}
+    <option value={{userChoice.id}}>{{userChoice.email}}</option>
+  {{/each}}
+</select>
+{{#each users as |user|}}
+  <div {{action 'select' user on='click'}}>
+  {{selector-item item=user selected=selected field='email'}}
+  </div>
+{{/each}}
+</div>
+<input type="submit" value="Submit" {{action 'associateFollowees' on='click'}} />

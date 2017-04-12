@@ -1,0 +1,30 @@
+<div class="pure-g">
+  <div class="pure-u-1">
+    <h2>Issues</h2>
+  </div>
+  <div class="pure-u-md-1-2">
+    <select onchange={{action (mut accountId) value="target.value"}}>
+      <option value=""></option>
+      {{#each model.accounts as |accountChoice|}}
+        <option value={{accountChoice.id}} selected={{eq accountId accountChoice.id}}>{{accountChoice.id}}. {{accountChoice.name}}</option>
+      {{/each}}
+    </select>
+    <select onchange={{action (mut projectSlug) value="target.value"}}>
+      <option value=""></option>
+      {{#each model.projects as |projectChoice|}}
+        <option value={{projectChoice.name}} selected={{eq projectSlug projectChoice.name}}>{{projectChoice.id}}. {{projectChoice.name}}</option>
+      {{/each}}
+    </select>
+
+    <input class="pure-button" type="submit" value="Sync issues" {{action 'getIssues' accountId projectSlug}} />
+  </div>
+
+  <div class="pure-u-md-1-2">
+    <ul>
+    {{#each model.issues as |issue|}}
+      <li><a href="{{ issue.links.html.href }}" target="_blank">{{ issue.title }}</a></li>
+    {{/each}}
+    </ul>
+  </div>
+</div>
+

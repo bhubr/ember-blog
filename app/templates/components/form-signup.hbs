@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col s6 offset-s3">
+  	<form {{action "onSubmit" on="submit"}}>
+      <div class="row">
+        <div class="input-field col s6">
+          {{input value=firstName placeholder="First name" id="firstName" type="text" class="validate"}}
+          <label for="firstName">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          {{input value=lastName placeholder="Last name" id="lastName" type="text" class="validate"}}
+          <label for="lastName">Last Name</label>
+        </div>
+      </div> 	
+      <div class="row">
+        <div class="input-field col s12">
+          {{input id="email" name="email" value=email placeholder="email" class="validate"}}
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          {{input id="password" type="password" name="password" value=password placeholder="password" class="validate"}}
+          <label for="password">Password</label>
+        </div>
+      </div>  	
+      <div class="row">
+        <div class="input-field col s12">
+          {{input id="passwordConfirm" type="password" name="passwordConfirm" value=passwordConfirm placeholder="password confirmation" class="validate"}}
+          <label for="passwordConfirm">Password</label>
+        </div>
+      </div>    
+  	<input class="btn" type="submit" value="Go" />
+  	</form>
+  </div>
+</div>

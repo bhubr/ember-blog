@@ -1,0 +1,13 @@
+
+<h2>Posts</h2>
+
+<div class="row">
+  <div class="col s6">
+    {{item-list items=model.posts editRoute='post.edit' nameField='title'}}
+    {{#link-to 'post.new' class="waves-effect waves-light btn"}}New post{{/link-to}}
+  </div>
+
+  <div class="col s6">
+  {{outlet}}
+  </div>
+</div>

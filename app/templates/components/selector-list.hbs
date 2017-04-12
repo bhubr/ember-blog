@@ -1,0 +1,6 @@
+{{#each items as |item|}}
+  <div {{action 'select' item on='click'}}>
+  {{selector-item item=item selected=selected field=nameField}}
+  {{selector-checked selected item}}
+  </div>
+{{/each}}

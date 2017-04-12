@@ -1,0 +1,19 @@
+<form {{action "createOrUpdate" on="submit"}}>
+  {{input value=post.title placeholder="title"}}<br>
+  <select onchange={{action (mut post.authorId) value="target.value"}}><br>
+    <option value=""></option>
+    {{#each users as |ownerChoice|}}
+      <option value={{ownerChoice.id}} selected={{eq post.authorId ownerChoice.id}}>{{ownerChoice.id}}. {{ownerChoice.firstName}} <{{ownerChoice.email}}></option>
+    {{/each}}
+  </select><br>
+
+  <div class="row">
+    <div class="input-field col s12">
+      {{textarea id="textarea1" value=post.content class="materialize-textarea"}}<br>
+    </div>
+  </div>
+
+  {{selector-list selected=selectedTags items=tags nameField='name'}}
+  
+  <input class="btn" type="submit" value="Submit" />
+</form>

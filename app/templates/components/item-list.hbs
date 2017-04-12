@@ -1,0 +1,8 @@
+{{#each items as |item|}}
+{{#if item.id}}
+  <li class="collection-item">
+    <a {{action 'delete' item}}><i class="tiny material-icons">delete</i></a>
+    {{#link-to editRoute item.id}}{{item.id}}. {{get item nameField}}{{/link-to}}
+  </li>
+{{/if}}
+{{/each}}

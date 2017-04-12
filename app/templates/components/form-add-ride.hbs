@@ -1,0 +1,74 @@
+<div class="pure-g">
+  <div class="pure-u-1 pure-u-md-1-3">
+    <h3>Add ride</h3>
+  	<form {{action "onSubmit" on="submit"}}>
+      <div class="row">
+        <div class="input-field col s6">
+          {{input value=departure placeholder="departure" id="departure" type="text" class="validate"}}
+          <label for="departure">departure</label>
+        </div>
+        <div class="input-field col s6">
+          {{input value=arrival placeholder="arrival" id="arrival" type="text" class="validate"}}
+          <label for="arrival">arrival</label>
+        </div>
+      </div> 	
+      <div class="row">
+        <div class="input-field col s12">
+          {{input id="date" name="date" value=date placeholder="date" class="validate"}}
+          <label for="date">Date</label>
+        </div>
+      </div>
+  	<input class="btn" type="submit" value="Submit" />
+  	</form>
+  </div>
+
+  <div class="pure-u-1 pure-u-md-1-3">
+    <h3>Add Post</h3>
+    <form {{action "subPost" on="submit"}}>
+      {{input value=pTitle placeholder="title"}}<br>
+      <select onchange={{action (mut pAuthorId) value="target.value"}}>
+        <option value=""></option>
+        {{#each users as |ownerChoice|}}
+          <option value={{ownerChoice.id}} selected={{eq pAuthorId ownerChoice.id}}>{{ownerChoice.id}}. {{ownerChoice.firstName}} <{{ownerChoice.email}}></option>
+        {{/each}}
+      </select><br>
+
+      {{textarea value=pContent placeholder="Write your content here..."}}<br>
+      {{tag-selector selected=postTags tags=tags}}<br>
+      <input class="btn" type="submit" value="Submit" />
+    </form>
+  </div>
+
+  <div class="pure-u-1 pure-u-md-1-3">
+    <h3>Add Tag</h3>
+    <form {{action "subTag" on="submit"}}>
+      {{input value=tName}}
+      <input class="btn" type="submit" value="Submit" />
+    </form>
+
+    <h3>Add Make</h3>
+    <form {{action "subCarMake" on="submit"}}>
+      {{input value=cmName}}
+      <input class="btn" type="submit" value="Submit" />
+    </form>
+
+    <h3>Add Car</h3>
+    <p>{{cMakeId}} {{cOwnerId}} {{cName}}</p>
+    <form {{action "subCar" on="submit"}}>
+      {{input value=cName}}<br>
+      <select onchange={{action (mut cMakeId) value="target.value"}}>
+        <option value=""></option>
+        {{#each carMakes as |makeChoice|}}
+          <option value={{makeChoice.id}} selected={{eq cMakeId makeChoice.id}}>{{makeChoice.name}}</option>
+        {{/each}}
+      </select><br>
+      <select onchange={{action (mut cOwnerId) value="target.value"}}>
+        <option value=""></option>
+        {{#each users as |ownerChoice|}}
+          <option value={{ownerChoice.id}} selected={{eq cOwnerId ownerChoice.id}}>{{ownerChoice.id}}. {{ownerChoice.firstName}} <{{ownerChoice.email}}></option>
+        {{/each}}
+      </select><br>
+      <input class="btn" type="submit" value="Submit" />
+    </form>
+  </div>
+</div>

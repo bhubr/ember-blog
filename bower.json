@@ -1,0 +1,9 @@
+{
+  "name": "jsonapi-ember",
+  "dependencies": {
+    "store-js": "^1.3.20",
+    "materialize": "^0.98.0",
+    "uikit": "^2.27.2",
+    "pure": "^0.6.2"
+  }
+}

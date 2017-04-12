@@ -1,0 +1,25 @@
+<div class="pure-g">
+  <div class="pure-u-1">
+    <h2>Sync</h2>
+  </div>
+  <div class="pure-u-md-1-2">
+    <input class="pure-button" type="submit" value="Sync local" {{action 'getLocalRepositories'}} />
+    <select onchange={{action (mut accountId) value="target.value"}}>
+      <option value=""></option>
+      {{#each model.accounts as |accountChoice|}}
+        <option value={{accountChoice.id}} selected={{eq accountId accountChoice.id}}>{{accountChoice.id}}. {{accountChoice.name}}</option>
+      {{/each}}
+    </select>
+    <input class="pure-button" type="submit" value="Sync remote" {{action 'getRemoteRepositories' accountId}} />
+  </div>
+
+  <div class="pure-u-md-1-2">
+  {{outlet}}
+  </div>
+</div>
+
+<ul>
+{{#each model.localRepositories as |repo|}}
+  <li><a href="{{ repo.url }}">{{ repo.url }}</a></li>
+{{/each}}
+</ul>
