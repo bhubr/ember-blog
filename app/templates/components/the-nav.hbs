@@ -17,6 +17,12 @@
                     <li>
                         {{#link-to 'user.profile' user.username}}{{user.username}}{{/link-to}}
                     </li>
+                    <li>
+                        {{#link-to 'user.posts' user.username}}My Posts{{/link-to}}
+                    </li>
+                     <li>
+                        {{#link-to 'post.new'}}+Post{{/link-to}}
+                    </li>
                     {{else}}
                     <li>
                         {{#link-to 'auth.signin'}}Sign in{{/link-to}}

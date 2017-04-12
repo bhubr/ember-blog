@@ -17,6 +17,7 @@ Router.map(function() {
   });
   this.route('user', function() {
     this.route('profile', { path: '/:username/profile' });
+    this.route('posts', { path: '/:username/posts' });
   });
   this.route('single', { path: '/:slug' });
   this.route('contact');

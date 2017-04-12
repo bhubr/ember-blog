@@ -1,19 +1,38 @@
-<form {{action "createOrUpdate" on="submit"}}>
-  {{input value=post.title placeholder="title"}}<br>
-  <select onchange={{action (mut post.authorId) value="target.value"}}><br>
-    <option value=""></option>
-    {{#each users as |ownerChoice|}}
-      <option value={{ownerChoice.id}} selected={{eq post.authorId ownerChoice.id}}>{{ownerChoice.id}}. {{ownerChoice.firstName}} <{{ownerChoice.email}}></option>
-    {{/each}}
-  </select><br>
-
-  <div class="row">
-    <div class="input-field col s12">
-      {{textarea id="textarea1" value=post.content class="materialize-textarea"}}<br>
+<form id="editPostForm" {{action "createOrUpdate" on="submit"}}>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label for="title">Post Title</label>
+            {{input id="title" type="text" class="form-control" value=post.title placeholder="Post title"}}
+            <p class="help-block text-danger"></p>
+        </div>
     </div>
-  </div>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label for="slug">Post Slug</label>
+            {{input id="slug" type="text" class="form-control" value=post.slug placeholder="Post slug"}}
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label for="content">Post content</label>
+            {{textarea id="content" value=post.content class="form-control"}}
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
 
-  {{selector-list selected=selectedTags items=tags nameField='name'}}
-  
-  <input class="btn" type="submit" value="Submit" />
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+          {{selector-list selected=selectedTags items=tags nameField='name'}}
+        </div>
+    </div>
+
+    <br>
+
+    <div id="success"></div>
+    <div class="row">
+        <div class="form-group col-xs-12">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
 </form>

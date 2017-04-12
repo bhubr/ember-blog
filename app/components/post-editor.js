@@ -4,17 +4,6 @@ export default Ember.Component.extend({
   store: Ember.inject.service(),
   router: Ember.inject.service('-routing'),
 
-  init() {
-    this._super(...arguments);
-    console.log(this.get('post'));
-    // this.createPostIfNew();
-  },
-
-  didUpdateAttrs() {
-    this._super(...arguments);
-    // this.createPostIfNew();
-  },
-
   // createPostIfNew() {
   //   if(this.get('post') === undefined) {
   //     this.set('post', this.get('store').createRecord('post', { title: 'New Post' }));
@@ -29,6 +18,8 @@ export default Ember.Component.extend({
   actions: {
     createOrUpdate() {
       const post = this.get('post');
+      const user = this.get('user');
+      post.set('author', user);
       console.log(this.get('selectedTags'));
       this.get('selectedTags').forEach(tag => {
         console.log('bind tag',tag);
