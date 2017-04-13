@@ -3,9 +3,6 @@ import RSVP from 'rsvp';
 
 export default Ember.Route.extend({
   session: Ember.inject.service(),
-  // init() {
-  //   this._super(...arguments);
-  // },
   beforeModel() {
     this.get('session').retrieveSession()
   	.then(user => {

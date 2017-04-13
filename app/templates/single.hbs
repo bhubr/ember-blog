@@ -5,9 +5,12 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>{{model.title}}</h1>
+                        {{#if (eq model.user.id model.post.author.id)}}
+                        {{#link-to 'post.edit' model.post.id class="link-white"}}<span class="glyphicon glyphicon-edit float-right left-padding" aria-hidden="true"></span>{{/link-to}}
+                        {{/if}}
+                        <h1>{{model.post.title}}</h1>
                         <!-- <h2 class="subheading">Problems look mighty small from 150 miles up</h2> -->
-                        <span class="meta">Posted by <a href="#">{{model.author.firstName}} {{model.author.lastName}}</a> on {{model.createdAt}}</span>
+                        <span class="meta">Posted by <a href="#">{{model.post.author.firstName}} {{model.post.author.lastName}}</a> on {{model.post.createdAt}}</span>
                     </div>
                 </div>
             </div>
@@ -19,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                {{model.content}}
+                {{{model.post.content}}}
                 </div>
             </div>
         </div>
