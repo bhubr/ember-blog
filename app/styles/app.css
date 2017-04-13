@@ -63,8 +63,8 @@ h6 {
 a {
   color: #333333;
 }
-a.link-white {
-  color: #fff;
+a.link-bright {
+  color: #cde;
 }
 a:hover,
 a:focus {
