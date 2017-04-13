@@ -9,10 +9,11 @@ export default Ember.Component.extend({
   	onSubmit: function() {
       const firstName = this.get('firstName');
       const lastName = this.get('lastName');
+      const username = this.get('username');
   		const email = this.get('email');
   		const password = this.get('password');
       console.log(firstName, lastName, email, password);
-  		this.get('session').doSignup(firstName, lastName, email, password);
+  		this.get('session').doSignup(firstName, lastName, username, email, password);
   	}
   }
 });
