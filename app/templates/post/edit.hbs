@@ -1,28 +1,32 @@
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('/img/post-bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1>{{model.post.title}}</h1>
-                        <!-- <h2 class="subheading">Problems look mighty small from 150 miles up</h2> -->
-                        <span class="meta">Posted by <a href="#">{{model.post.author.firstName}} {{model.post.author.lastName}}</a> on {{model.post.createdAt}}</span>
-                    </div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('/img/post-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>{{model.post.title}}</h1>
+                    <!-- <h2 class="subheading">Problems look mighty small from 150 miles up</h2> -->
+                    <span class="meta">Posted by <a href="#">{{model.post.author.firstName}} {{model.post.author.lastName}}</a> on {{model.post.createdAt}}</span>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-    <!-- Post Content -->
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                {{post-editor user=model.user post=model.post tags=model.tags selectedTags=model.post.tags}}
-                </div>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {{#if (eq model.post.author.id model.user.id)}}
+            {{post-editor user=model.user post=model.post tags=model.tags selectedTags=model.post.tags}}
+            {{else}}
+            You don't have the rights to edit another user's posts!
+            {{/if}}
             </div>
         </div>
-    </article>
+    </div>
+</article>
 
-    <hr>
+<hr>
