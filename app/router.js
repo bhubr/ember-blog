@@ -20,8 +20,8 @@ Router.map(function() {
     this.route('posts', { path: '/:username/posts' });
   });
   this.route('single', { path: '/:slug' });
+  this.route('about');
   this.route('contact');
-  // this.route('index');
 });
 
 export default Router;
