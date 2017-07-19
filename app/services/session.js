@@ -68,8 +68,8 @@ export default Ember.Service.extend({
     .then(this.fetchUser.bind(this));
   },
 
-  doSignup: function(firstName, lastName, email, password) {
-    const data = { firstName, lastName, email, password };
+  doSignup: function(firstName, lastName, username, email, password) {
+    const data = { firstName, lastName, username, email, password };
     const user = this.get('store').createRecord('user', data);
     user.save()
     .then(user => this.doSignin(email, password));
